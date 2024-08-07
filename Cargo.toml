@@ -1,0 +1,13 @@
+[package]
+name = "leptos_open_wechat"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+console_error_panic_hook = "0.1.7"
+js-sys = "0.3.69"
+leptos = { version = "0.6.13", features = ["csr"] }
+serde = { version = "1.0.204", features = ["derive"] }
+serde-wasm-bindgen = "0.6.5"
+wasm-bindgen = "0.2.92"
+wasm-bindgen-futures = "0.4.42"
