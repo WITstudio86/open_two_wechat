@@ -1,6 +1,6 @@
 [package]
 name = "leptos_open_wechat"
-version = "0.1.0"
+version = "0.2.4"
 edition = "2021"
 
 [dependencies]
@@ -11,3 +11,6 @@ serde = { version = "1.0.204", features = ["derive"] }
 serde-wasm-bindgen = "0.6.5"
 wasm-bindgen = "0.2.92"
 wasm-bindgen-futures = "0.4.42"
+
+[workspace]
+members = ["src-tauri"]

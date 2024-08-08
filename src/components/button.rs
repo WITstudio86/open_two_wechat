@@ -6,13 +6,12 @@ use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
 extern "C" {
-    #[wasm_bindgen(js_namespace = ["window", "__TAURI__", "tauri"])]
+    #[wasm_bindgen(js_namespace = ["window", "__TAURI__", "core"])]
     async fn invoke(cmd: &str, args: JsValue) -> JsValue;
 }
 
 #[derive(Deserialize, Serialize)]
-struct DoitArgs<'a> {
-    os: &'a str,
+struct DoitArgs {
     num: u8,
 }
 
@@ -27,10 +26,7 @@ pub fn Button(
     let (message, set_message) = message;
     let doit = move |_| {
         spawn_local(async move {
-            let args = DoitArgs {
-                os: "Mac",
-                num: n.get(),
-            };
+            let args = DoitArgs { num: n.get() };
             let args = to_value(&args).unwrap();
             let result = invoke("doit", args).await.as_string().unwrap();
             set_message.set(result);
