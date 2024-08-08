@@ -1,6 +1,6 @@
 [package]
 name = "leptos_open_wechat"
-version = "0.2.4"
+version = "0.2.5"
 edition = "2021"
 
 [dependencies]
