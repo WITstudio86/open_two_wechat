@@ -1,7 +1,7 @@
 {
   "productName": "more_wechat",
   "version": "0.2.4",
-  "identifier": "com.tauri.dev",
+  "identifier": "WITstudio",
   "build": {
     "frontendDist": "../dist",
     "devUrl": "http://localhost:1420",

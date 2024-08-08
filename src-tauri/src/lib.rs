@@ -8,6 +8,7 @@ fn doit(num: u8) -> String {
     let mut com = "";
     let mut arg = "";
     let mut os = tauri_plugin_os::platform();
+    println!("os:{}", os);
     let mut _output = String::new();
     if os.contains("window") {
         os = "windows";
@@ -54,7 +55,7 @@ fn run_in_mac(com: &str, arg: &str) -> Result<Child, io::Error> {
 }
 
 fn run_(com: &str, arg: &str, os: &str) -> Result<Child, io::Error> {
-    if os == "Win" {
+    if os == "windows" {
         run_in_win(arg)
     } else {
         run_in_mac(com, arg)
